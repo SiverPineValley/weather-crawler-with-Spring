@@ -2,6 +2,7 @@ package org.ajou.realcoding.weathercrawler.weathercrawler.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.ajou.realcoding.weathercrawler.weathercrawler.api.OpenWeatherMapApiClient;
 import org.ajou.realcoding.weathercrawler.weathercrawler.domain.CurrentWeather;
 import org.ajou.realcoding.weathercrawler.weathercrawler.repository.CurrentWeatherRepository;
@@ -16,6 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class WeatherService {
     // 자동 객체화
     List<String> cities = null;
@@ -53,5 +55,6 @@ public class WeatherService {
 
         CurrentWeather currentWeather = openWeatherMapApiClient.requestCurrentWeather(targetCity);
         currentWeatherRepository.insertCurrentWeather(currentWeather);
+        log.info("Current weather has been inserted successfully: {}", currentWeather);
     }
 }
