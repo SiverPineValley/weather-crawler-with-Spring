@@ -38,7 +38,8 @@ public class WeatherService {
 
     public CurrentWeather getCurrentWeatherByCityName(String cityName)
     {
-        return openWeatherMapApiClient.requestCurrentWeather(cityName);
+        return currentWeatherRepository.findCurrentWeather(cityName);
+//        return openWeatherMapApiClient.requestCurrentWeather(cityName);
     }
 
     LinkedList<String> citiesQueue = new LinkedList<>();
