@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import Header from './component/header';
+import Home from './component/Home'
+import About from './component/About'
 
 import './App.css';
 
@@ -17,10 +20,14 @@ class App extends Component {
 
 
     return (
-      <div className="App">
+      <BrowserRouter>
+        <div className="App">
         <Header name={name} foo={bar}/>
-  
-      </div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" render={About}/>
+        </div>
+      </BrowserRouter>
+
     );
   }
   
