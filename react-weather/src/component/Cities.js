@@ -1,7 +1,9 @@
 import React , {Component} from 'react';
 
 class Cities extends Component {
-
+    state = {
+        cities: []
+    };
 
     componentDidMount() {
         const API = "http://localhost:8082/weather-crawler/available-cities"
@@ -12,7 +14,7 @@ class Cities extends Component {
             })
           });
 
-        fetch(req)
+        fetch(API)
         .then(data => data.json())
         .then(result => {
             this.setState({
@@ -23,6 +25,7 @@ class Cities extends Component {
 
     render() {
         const {cities} = this.state;
+        console.log("Cities: " + cities);
         return (
             <div>
                 List: {cities.map(item => {
