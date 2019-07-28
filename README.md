@@ -33,6 +33,9 @@ Port Number: 8081
 
 <br>
 
+### 5. Start main function
+Open this project with IntelliJ and start main function in WeatherCrawlerApplication.java.
+
 ## DevOps
 JAVA Spring Boot, Maven, Jenkins, IntelliJ
 
