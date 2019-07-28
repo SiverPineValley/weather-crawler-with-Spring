@@ -3,9 +3,6 @@ Spring Weather Crawler Project
 
 <br>
 
-
-<br>
-
 ## Prerequisite
 - `Java 1.8`
 - `Apache Maven 3.6.1`
